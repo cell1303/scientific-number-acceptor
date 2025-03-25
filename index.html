@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scientific Number Acceptor</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                background-color: #ffc0cb !important; /* Pink muda */
+            }
+        </style>
+    </head>    
+<body>
+    <h2>Scientific Number Acceptor</h2>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <button onclick="validateNumber()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function validateNumber() {
+            let input = document.getElementById("numberInput").value;
+            let regex = /^-?\d+(\.\d+)?(e[-+]?\d+)?$/i;
+            let resultText = regex.test(input) ? "Yes, it is a number" : "No, it is not a number";
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</body>
+</html>
